@@ -24,51 +24,51 @@
 									<div class="form-group">
 										<label for="exampleFormControlSelect1">Profil de risque</label>
 										<select class="form-control" id="exampleFormControlSelect1">
-											<option>Profil 1</option>
-											<option>Profil 2</option>
-											<option>Profil 3</option>
-											<option>Profil 4</option>
-											<option>Profil 5</option>
+											<option>Low</option>
+											<option>Medium</option>
+											<option>High</option>
 										</select>
 									</div>
-									<div class="form-group">
-										<label for="name">
-											Description
-										</label>
-										<input type="text" id="name" class="form-control">
-									</div>
+									
 									<div class="form-group">
 										<label>Date de certification</label>
 										<div class="col-sm-10">
-											<input type="date" readonly class="form-control-plaintext" id="staticEmail"
-												value="email@example.com">
+											<input type="date" readonly class="form-control" id="staticEmail"
+												value="06/06/2019">
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="name">
-											Date de prochaine certification
-										</label>
-										<input type="date" id="name" class="form-control">
+										<label>Date de péremption</label>
+										<div class="col-sm-10">
+											<input type="date" readonly class="form-control" id="staticEmail"
+												value="" placeholder="06/06/2019">
+										</div>
 									</div>
 									<div class="form-group row">
-										<div class="col-sm-2">Checkbox</div>
+										<div class="col-sm-2">Documents</div>
 										<div class="col-sm-10">
 											<div class="form-check">
 												<input class="form-check-input" type="checkbox" id="gridCheck1">
 												<label class="form-check-label" for="gridCheck1">
-													Document 1
+													Carte nationale d'identité
 												</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" type="checkbox" id="gridCheck1">
 												<label class="form-check-label" for="gridCheck1">
-													Document 2
+													Justificatif de domicile
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="gridCheck1" disabled>
+												<label class="form-check-label" for="gridCheck1">
+													Relevé fiscal
 												</label>
 											</div>
 											<div class="form-check">
 												<input class="form-check-input" type="checkbox" id="gridCheck1">
 												<label class="form-check-label" for="gridCheck1">
-													Document 3
+													Passeport
 												</label>
 											</div>
 										</div>
@@ -77,6 +77,12 @@
 										<div class="col text-right">
 											<button type="submit" class="btn btn-primary">Créer le certificat</button>
 										</div>
+									</div>
+									<div class="form-group">
+										<label for="name">
+											Commentaire
+										</label>
+										<input type="text" id="name" class="form-control">
 									</div>
 								</form>
 							</div>

@@ -12,10 +12,7 @@ export class PiecesService {
 		this.getCertificatsFromServer();
 	}
 
-	
 	certificats: Certificat[] = [];
-
-
 
 	getCertificatsFromServer() {
 		this.httpClient

@@ -9,7 +9,7 @@ import { DocumentComponent } from './document/document.component';
 const routes: Routes = [
 	{ path: 'nouveau-client', component: AjouterClientComponent },
 	{ path: 'dossier-client', component: DossierClientComponent },
-	{ path: 'rechercher-client', component: RechercherClientComponent },
+	{ path: '', component: RechercherClientComponent },
 	{ path: 'document', component: DocumentComponent }
 
 
