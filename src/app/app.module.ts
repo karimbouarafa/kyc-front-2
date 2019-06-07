@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { InfosClientComponent } from './infos-client/infos-client.component';
 import { DisplayDocumentsComponent } from './display-documents/display-documents.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -16,6 +17,10 @@ import { AjouterClientComponent } from './ajouter-client/ajouter-client.componen
 import { RechercherClientComponent } from './rechercher-client/rechercher-client.component';
 import { AccesPageComponent } from './acces-page/acces-page.component';
 import { ConsulterCertificatComponent } from './consulter-certificat/consulter-certificat.component';
+import { DocumentComponent } from './document/document.component';
+import { FormsModule } from '@angular/forms';
+import { OtherdocumentComponent } from './otherdocument/otherdocument.component';
+
 
 @NgModule({
   declarations: [
@@ -32,11 +37,16 @@ import { ConsulterCertificatComponent } from './consulter-certificat/consulter-c
     AjouterClientComponent,
     RechercherClientComponent,
     AccesPageComponent,
-    ConsulterCertificatComponent
+    ConsulterCertificatComponent,
+    DocumentComponent,
+        OtherdocumentComponent,
+   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

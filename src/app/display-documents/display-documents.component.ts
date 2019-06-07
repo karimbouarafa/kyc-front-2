@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DocumentsService } from '../services/document.service';
+import { Docu } from '../models/document.model';
+
 
 @Component({
   selector: 'app-display-documents',
@@ -6,10 +9,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display-documents.component.css']
 })
 export class DisplayDocumentsComponent implements OnInit {
-
-  constructor() { }
+  
+  
+  docs: Docu[] = [];
+  constructor(private documentsservice: DocumentsService) {
+   // this.docs = this.documentsservice.documents;
+    
+    this.docs = this.documentsservice.mydocs;
+    
+   }
 
   ngOnInit() {
+    
   }
+
+ 
+ 
+
 
 }
