@@ -4,33 +4,34 @@
 			<div class="row p-2">
 				<h5 class="card-title font-weight-bold">Rechercher un client</h5>
 				<div class="col-sm-12 col-sm-offset-2">
-							<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+					<form (ngSubmit)="onSubmit(f)" #f="ngForm">
 
 
-							<div class="form-group ">
-								<label for="nom">
-								 <h5> <br/>Nom :  </h5>
-								</label>
-								<input type="text" id="client" class="form-control" name="nom" ngModel required>
-							</div>
+						<div class="form-group ">
+							<label for="nom">
+								<h5> <br />Nom : </h5>
+							</label>
+							<input type="text" id="client" class="form-control" name="nom" ngModel required>
+						</div>
 
-							<div class="form-group ">
-								<label for="prénom">
-								 <h5> <br/>Prénom :  </h5>
-								</label>
-								<input type="text" id="prénom" class="form-control" name="prénom" ngModel required>
-							</div>
+						<div class="form-group ">
+							<label for="prénom">
+								<h5> <br />Prénom : </h5>
+							</label>
+							<input type="text" id="prénom" class="form-control" name="prénom" ngModel required>
+						</div>
 
-							<div class="form-group ">
-								<label for="datedenaissance">
-								 <h5> <br/>Date de naissance :  </h5>
-								</label>
-								<input type="text" id="datedenaissance" class="form-control" name="datedenaissance" ngModel required>
-							</div>
-			
+						<div class="form-group ">
+							<label for="datedenaissance">
+								<h5> <br />Date de naissance : </h5>
+							</label>
+							<input type="text" id="datedenaissance" class="form-control" name="datedenaissance" ngModel
+								required>
+						</div>
+
 						<div class="form-group row">
 							<div class="col text-right">
-								<button class="btn btn-primary" type="submit"  [disabled]="f.invalid">Rechercher</button>
+								<button class="btn btn-primary" type="submit" [disabled]="f.invalid">Rechercher</button>
 
 							</div>
 						</div>
