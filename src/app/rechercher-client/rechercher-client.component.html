@@ -1,26 +1,23 @@
 <div class="container p-3">
 	<div class="card">
 		<div class="card-body">
+
 			<div class="row p-2">
 				<h5 class="card-title font-weight-bold">Rechercher un client</h5>
 				<div class="col-sm-12 col-sm-offset-2">
 					<form (ngSubmit)="onSubmit(f)" #f="ngForm">
-
-
 						<div class="form-group ">
 							<label for="nom">
 								<h5> <br />Nom : </h5>
 							</label>
 							<input type="text" id="client" class="form-control" name="nom" ngModel required>
 						</div>
-
 						<div class="form-group ">
 							<label for="prénom">
 								<h5> <br />Prénom : </h5>
 							</label>
 							<input type="text" id="prénom" class="form-control" name="prénom" ngModel required>
 						</div>
-
 						<div class="form-group ">
 							<label for="datedenaissance">
 								<h5> <br />Date de naissance : </h5>
@@ -28,15 +25,25 @@
 							<input type="text" id="datedenaissance" class="form-control" name="datedenaissance" ngModel
 								required>
 						</div>
-
 						<div class="form-group row">
 							<div class="col text-right">
 								<button class="btn btn-primary" type="submit" [disabled]="f.invalid">Rechercher</button>
-
 							</div>
 						</div>
 					</form>
+
 				</div>
+
 			</div> <!-- card.// -->
 		</div>
 	</div>
+	<div *ngIf="!isClientFound()" class="p-3">
+		<div class="alert alert-warning" role="alert">
+			<h4 class="alert-heading">Client non trouvé</h4>
+			<p>Vérifiez votre entrée dans les champs de recherche</p>
+			<hr>
+			<p class="mb-0">Sinon, vous pouvez ajouter un nouveau client en cliquant <a href="./nouveau-client">ici</a>
+			</p>
+		</div>
+	</div>
+</div>

@@ -16,19 +16,21 @@ export class RechercherClientComponent implements OnInit {
 	ngOnInit() {
 	}
 
-
 	onSubmit(form: NgForm) {
 		console.log('recherche client...');
 		this.clientService.nom = form.value['nom'];
 		this.clientService.prénom = form.value['prénom'];
 		this.clientService.datedenaissance = form.value['datedenaissance'];
 		console.log(this.clientService.idclient());
+	}
+
+	isClientFound() {
 		if (this.clientService.isClientInDatabase() == true) {
 			this.router.navigate(['/dossier-client']);
 		}
 		else {
-			this.router.navigate(['/nouveau-client']);
+			// this.router.navigate(['/nouveau-client']);
+			return false
 		}
-
 	}
 }
