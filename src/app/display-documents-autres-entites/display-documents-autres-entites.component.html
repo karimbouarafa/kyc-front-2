@@ -7,24 +7,16 @@
 			<table class="table table-hover table-striped table-sm">
 				<thead class="	">
 					<tr>
-						<th scope="col">Type de document   </th>
+						<th scope="col">Type de document </th>
 						<th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date de création</th>
 						<th scope="col">Statut</th>
 						<th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date d'expiration</th>
 						<th class="text-center">Ajouté par</th>
 						<th class="text-center">&nbsp;&nbsp;&nbsp;Télécharger</th>
-						
 					</tr>
 				</thead>
-				
 			</table>
-			
-			<app-otherdocument  *ngFor="let doc of docs; let i = index" 
-			
-			[index]=i ></app-otherdocument> 
-			
+			<app-otherdocument *ngFor="let doc of docs; let i = index" [index]=i></app-otherdocument>
 		</div>
-		
-		
 	</div>
 </div>
