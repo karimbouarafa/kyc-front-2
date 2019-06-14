@@ -21,6 +21,7 @@ import { DocumentComponent } from './document/document.component';
 import { FormsModule } from '@angular/forms';
 import { OtherdocumentComponent } from './otherdocument/otherdocument.component';
 import { DocumentTableComponent } from './document-table/document-table.component';
+import { CertificateRowComponent } from './certificate-row/certificate-row.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { DocumentTableComponent } from './document-table/document-table.componen
     DocumentComponent,
         OtherdocumentComponent,
         DocumentTableComponent,
+        CertificateRowComponent,
  
   ],
   imports: [

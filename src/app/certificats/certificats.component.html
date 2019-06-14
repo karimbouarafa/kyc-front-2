@@ -15,30 +15,15 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Ouvert</td>
+					<tr *ngFor="let c of certificats">
+						<app-certificate-row [certificat]="c" [columnsCertificat]="columnsCertificat">
+						</app-certificate-row>
 
-						<td>Pierre Dupont (BPCE A)</td>
-						<td>01/01/2019</td>
-						<td>
-							<app-consulter-certificat></app-consulter-certificat>
-						</td>
-					</tr>
-				</tbody>
-				<tbody>
-					<tr>
-						<td>Suspendu</td>
-						<td></td>
-						<td>20/10/2014</td>
-						<td>
-							<app-consulter-certificat></app-consulter-certificat>
-						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
-
 
 	<div class="card-footer">
 		<app-creation-certificat></app-creation-certificat>

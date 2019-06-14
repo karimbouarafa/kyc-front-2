@@ -17,14 +17,18 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let document of documentEntite">
-						<td *ngFor="let col of columnsDocumentEntite">
-							{{document[col]}}
-						</td>
-						<td>
-							<app-modify-document></app-modify-document>
-						</td>
+						<ng-container>
+							<td *ngFor="let col of columnsDocumentEntite">
+								{{document[col]}}
+							</td>
+							<td>
+								<app-modify-document></app-modify-document>
+							</td>
+						</ng-container>
+
+
 					</tr>
-					
+
 				</tbody>
 
 
