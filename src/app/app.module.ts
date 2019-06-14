@@ -20,6 +20,7 @@ import { ConsulterCertificatComponent } from './consulter-certificat/consulter-c
 import { DocumentComponent } from './document/document.component';
 import { FormsModule } from '@angular/forms';
 import { OtherdocumentComponent } from './otherdocument/otherdocument.component';
+import { DocumentTableComponent } from './document-table/document-table.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { OtherdocumentComponent } from './otherdocument/otherdocument.component'
     ConsulterCertificatComponent,
     DocumentComponent,
         OtherdocumentComponent,
-   
+        DocumentTableComponent,
+ 
   ],
   imports: [
     BrowserModule,
