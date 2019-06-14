@@ -28,6 +28,10 @@ export class DocumentsService {
 		this.notMyDocuments();
 	}
 
+	clientexist() {
+		if (this.documents.length = 0) { return false }
+		else { return true; }
+	}
 	adddocument(d: Docu) {
 		this.mydocs.push(d);
 	}
