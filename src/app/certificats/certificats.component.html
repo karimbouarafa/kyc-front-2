@@ -16,9 +16,18 @@
 				</thead>
 				<tbody>
 					<tr *ngFor="let c of certificats">
-						<app-certificate-row [certificat]="c" [columnsCertificat]="columnsCertificat">
-						</app-certificate-row>
-
+						<td>
+							{{c["status"]}}
+						</td>
+						<td>
+							{{c["initiator"]}}
+						</td>
+						<td>
+							{{c["dateCreation"]}}
+						</td>
+						<td>
+							<app-consulter-certificat></app-consulter-certificat>
+						</td>
 					</tr>
 				</tbody>
 			</table>
