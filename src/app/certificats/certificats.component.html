@@ -15,18 +15,22 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let c of certificats">
+					<tr *ngFor="let c of certificats, let i = index">
 						<td>
-							{{c["status"]}}
+							{{this.c["status"]}}
 						</td>
 						<td>
-							{{c["initiator"]}}
+							{{this.c["initiator"]}}
 						</td>
 						<td>
-							{{c["dateCreation"]}}
+							{{this.c["dateCreation"]}}
 						</td>
 						<td>
-							<app-consulter-certificat></app-consulter-certificat>
+							{{this.c["description"]}}
+						</td>
+						<td>
+							<app-consulter-certificat id="i" [certificat]="c">
+							</app-consulter-certificat>
 						</td>
 					</tr>
 				</tbody>

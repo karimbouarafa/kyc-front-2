@@ -2,7 +2,7 @@
 	<div class="card">
 		<div class="card-body">
 			<div class="row p-2">
-				<h5 class="card-title font-weight-bold">Documents relatifs au client provenant d'autres entités</h5>
+				<h5 class="card-title font-weight-bold">Documents relatifs au client</h5>
 			</div>
 			<table class="table table-hover table-striped table-sm">
 				<thead>
@@ -16,26 +16,31 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let document of documentEntite">
-						<ng-container>
-							<td *ngFor="let col of columnsDocumentEntite">
-								{{document[col]}}
-							</td>
-							<td>
-								<app-modify-document></app-modify-document>
-							</td>
-						</ng-container>
+					<tr *ngFor="let d of documentEntite">
 
-
+						<td>
+							{{d["nomDoc"]}}
+						</td>
+						<td>
+							{{d["dateA"]}}
+						</td>
+						<td>
+							{{d["status"]}}
+						</td>
+						<td>
+							{{d["dateE"]}}
+						</td>
+						<td>
+							<app-modify-document></app-modify-document>
+						</td>
+						<td align="center">
+							<a href=""><img
+									src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfjBgUOHA+YzKvYAAAAoklEQVQoz8WQMQ6CQBBF325cQ2ejB9jeG2hBSLS14BZW3oYTaGKlJ5CK2FkR7wDGCAmVDTYbs7siLVPN/HmZ/Pnglka7gvSAmNgVRh4gvPnnAoMAunc/lWSmXbJHAaA4sDDqTX4fzXhxYoziSMPVqAGUVgYJFRWJlUZpB9Wy5Q3saG0bRY9FQSG5s/oLrMkFc86kPLteJGQjgAkRsw7gwYX6A17QHGHqE0lVAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTA2LTA1VDEyOjI4OjE1KzAyOjAwseSBsAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wNi0wNVQxMjoyODoxNSswMjowMMC5OQwAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC"
+									alt=""></a>
+						</td>
 					</tr>
-
 				</tbody>
-
-
-
-
 			</table>
-
 		</div>
 	</div>
 </div>
