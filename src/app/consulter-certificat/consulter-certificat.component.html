@@ -1,12 +1,12 @@
-<!-- <div class="text-center">
-	<button type="button" class="btn " data-toggle="modal" data-target="#myModal4">
+<div class="text-center">
+	<button type="button" class="btn " data-toggle="modal" [attr.data-target]="dataTarget">
 		<img src=" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfjBgUUDDUFs0adAAAA6klEQVQoz7XQsUqCARSG4UetMBqCaNAiUBpKyGixJZcMWlyiqaGhyb0raGtsjiBagrqGIBtaGoQE/8Aps0ALW1qk6a/Bn6QL8F3OGb4D73cYObFoxuWVrEjhXeBWIBwGsiqKUlqaQjmLuu6deRlcF13r6DtXtq6g7MK3jisbJKw5sm1G3akJO1a9achZkrXgacyhkiTqevYdgEuPCqZs+Yz7iTTDv20gHZHQkjVvXKjm1Ze6O5P2pPVVHSd8aJs2KyMUeNCQtKuk58aJ2qBmRkXRnGdNMcsyUc328FExeZvy0uhqqAr+OY2SXzUjQASz9zcfAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTA2LTA1VDE4OjEyOjUzKzAyOjAw4uEqngAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wNi0wNVQxODoxMjo1MyswMjowMJO8kiIAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC"
 			alt="">
 	</button>
 
-</div> -->
+</div>
 
-<!-- <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
+<div class="modal fade" [attr.id]="modalId" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -17,13 +17,13 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
-			<div class="modal-body"> -->
+			<div class="modal-body">
 				<div class="card" style="">
 					<div class="card-body">
-						<!-- <div class="row  p-2">
+						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Statut</div>
-							<div class="col ">{{certificat["status"]}}</div>
-						</div> -->
+							<div class="col ">{{statutCertificat}}</div>
+						</div>
 						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Nom</div>
 							<div class="col ">{{this.nom()}}</div>
@@ -32,37 +32,34 @@
 							<div class="col-sm-5  font-weight-bold">Prénom</div>
 							<div class="col ">{{this.prenom()}}</div>
 						</div>
-						<!-- <div class="row  p-2">
+						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Profil de risque</div>
-							<div class="col ">{{certificat["profil"]}}</div>
+							<div class="col ">{{profil}}</div>
 						</div>
 						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Date de création</div>
-							<div class="col ">{{certificat["dateCreation"]}}</div>
+							<div class="col ">{{dateCreation}}</div>
 						</div>
 						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Date de péremption</div>
-							<div class="col ">{{certificat["dateProchaineCert"]}}</div>
-						</div> -->
+							<div class="col ">{{dateProchaineCertif}}</div>
+						</div>
 						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Documents</div>
 							<ul>
-								<li style="color:#2988f5; text-decoration: underline;">Permis de conduire</li>
-								<li style="color:#2988f5; text-decoration: underline;">CNI</li>
-								<li style="color:#2988f5; text-decoration: underline;">Carte grise véhicule principal
-								</li>
+								<li *ngFor ="let d of documentsCertificat" style="color:#2988f5; text-decoration: underline;">{{d}}</li>
 							</ul>
 						</div>
 						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Commentaire</div>
 							<div class="col ">{{commentaireCertificat}}</div>
 						</div>
-						<!-- <div class="row  p-2">
+						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Initié par</div>
-							<div class="col ">{{certificat["initiator"]}}</div>
-						</div> -->
+							<div class="col ">{{initiateur}}</div>
+						</div>
 					</div> <!-- card.// -->
-				<!-- </div>
+				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>

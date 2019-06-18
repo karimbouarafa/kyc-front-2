@@ -15,7 +15,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let c of certificats, let i = index">
+					<tr *ngFor="let c of certificats, index as i">
 						<td>
 							{{this.c["status"]}}
 						</td>
@@ -29,7 +29,7 @@
 							{{this.c["description"]}}
 						</td>
 						<td>
-							<app-consulter-certificat id="i" [certificat]="c">
+							<app-consulter-certificat [index]="i" [certificat]="c">
 							</app-consulter-certificat>
 						</td>
 					</tr>

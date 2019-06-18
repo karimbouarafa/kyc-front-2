@@ -16,6 +16,12 @@ export class ConsulterCertificatComponent implements OnInit {
 	dateCreation: string;
 	statutCertificat: string;
 	commentaireCertificat: string;
+	dateProchaineCertif: string;
+	profil: string;
+	initiateur: string;
+	documentsCertificat: string[];
+	dataTarget:string;
+	modalId:string;
 
 
 	constructor(private clientService: ClientService) {
@@ -24,13 +30,18 @@ export class ConsulterCertificatComponent implements OnInit {
 	ngOnInit() {
 		this.dateCreation = this.certificatElement["dateCreation"]
 		this.commentaireCertificat = this.certificatElement["description"]
-		console.log("commentaire certificat")
+		this.statutCertificat = this.certificatElement["status"]
+		this.dateProchaineCertif = this.certificatElement["dateProchaineCert"]
+		this.profil = this.certificatElement["profil"]
+		this.documentsCertificat=this.certificatElement["documents"]
+		this.initiateur = this.certificatElement["initiator"]
+		this.dataTarget = "#myModal".concat(this.index)
+		this.modalId = "myModal" + this.index
 
+		console.log(this.index);
 	}
 
-	changeCertificat() {
 
-	}
 
 	nom() {
 		return this.clientService.nom;

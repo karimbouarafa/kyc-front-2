@@ -120,7 +120,7 @@ export const CERTIFICATELIST: any[] = [
 		"docKYC": "2FF5609BC102A093536C022D8CB5547DFE0447657D0E7F19F77C0F44B6EACA52",
 		"initiator": "O=Natixis Assurance, L=Paris, C=FR",
 		"maintien": 1,
-		"documents": ["1"],
+		"documents": ["1","2","8"],
 		"profil": "low",
 		"dateCreation": "14-06-2019 04:09:54",
 		"cert": "karim14092019040954",
