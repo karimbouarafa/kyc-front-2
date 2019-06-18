@@ -66,6 +66,12 @@
 						</div>
 					</div> <!-- card.// -->
 					<div class="card-footer">
+						<div *ngIf="isEntiteSameAsUser()" class="col text-right">
+							<button type="" class="btn btn-primary">Révoquer</button>
+						</div>
+						<div *ngIf="isEntiteSameAsUser()" class="col text-right">
+							<button type="" class="btn btn-primary">Fin de maintenance</button>
+						</div>
 						<div class="col text-right">
 							<button type="" class="btn btn-primary">S'abonner</button>
 						</div>

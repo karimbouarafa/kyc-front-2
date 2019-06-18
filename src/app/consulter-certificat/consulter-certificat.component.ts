@@ -13,6 +13,8 @@ export class ConsulterCertificatComponent implements OnInit {
 
 	@Input() index: string;
 	@Input('certificat') certificatElement: string;
+	@Input() entiteUtilisateur: string;
+	@Input() idClient: string;
 	dateCreation: string;
 	statutCertificat: string;
 	commentaireCertificat: string;
@@ -20,9 +22,9 @@ export class ConsulterCertificatComponent implements OnInit {
 	profil: string;
 	initiateur: string;
 	documentsCertificat: string[];
-	dataTarget:string;
-	modalId:string;
-	certificatId:string;
+	dataTarget: string;
+	modalId: string;
+	certificatId: string;
 
 
 	constructor(private clientService: ClientService) {
@@ -34,16 +36,24 @@ export class ConsulterCertificatComponent implements OnInit {
 		this.statutCertificat = this.certificatElement["status"]
 		this.dateProchaineCertif = this.certificatElement["dateProchaineCert"]
 		this.profil = this.certificatElement["profil"]
-		this.documentsCertificat=this.certificatElement["documents"]
+		this.documentsCertificat = this.certificatElement["documents"]
 		this.initiateur = this.certificatElement["initiator"]
 		this.dataTarget = "#myModal".concat(this.index)
 		this.modalId = "myModal" + this.index
 		this.certificatId = this.certificatElement["cert"]
-
-		console.log(this.index);
 	}
 
-
+	isEntiteSameAsUser() {
+		console.log("initiateurDoc: ".concat(this.initiateur))
+		console.log("entiteUser: ".concat(this.entiteUtilisateur))
+		if (this.entiteUtilisateur == this.initiateur) {
+			console.log("meme entite")
+			return true
+		} else {
+			console.log("pas la meme entite")
+			return false
+		}
+	}
 
 	nom() {
 		return this.clientService.nom;

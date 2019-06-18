@@ -29,7 +29,8 @@
 							{{this.c["description"]}}
 						</td>
 						<td>
-							<app-consulter-certificat [index]="i" [certificat]="c">
+							<app-consulter-certificat [index]="i" [certificat]="c"
+								[entiteUtilisateur]="entiteUtilisateur" [idClient]="idClient">
 							</app-consulter-certificat>
 						</td>
 					</tr>
@@ -39,6 +40,6 @@
 	</div>
 
 	<div class="card-footer">
-		<app-creation-certificat></app-creation-certificat>
+		<app-creation-certificat [idClient]="idClient"></app-creation-certificat>
 	</div>
 </div>
