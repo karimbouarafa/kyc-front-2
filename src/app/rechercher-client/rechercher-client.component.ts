@@ -26,7 +26,7 @@ export class RechercherClientComponent implements OnInit {
 
 	isClientFound() {
 		if (this.clientService.isClientInDatabase() == true) {
-			this.router.navigate(['/dossier-client']);
+			this.router.navigate(['/dossier-client', this.clientService.idclient(), "Natixis"]);
 		}
 		else {
 			// this.router.navigate(['/nouveau-client']);

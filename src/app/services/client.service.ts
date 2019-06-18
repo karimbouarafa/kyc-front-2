@@ -16,10 +16,9 @@ export class ClientService {
 
 
 	idclient() {
-		console.log("id du client:")
+
 		var str = new String(this.nom.concat(this.prénom).concat(this.datedenaissance));
-		console.log(str);
-		console.log(str.toString());
+
 		return str.toString();
 	}
 	isClientInDatabase() {

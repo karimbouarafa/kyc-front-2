@@ -22,6 +22,7 @@ export class ConsulterCertificatComponent implements OnInit {
 	documentsCertificat: string[];
 	dataTarget:string;
 	modalId:string;
+	certificatId:string;
 
 
 	constructor(private clientService: ClientService) {
@@ -37,6 +38,7 @@ export class ConsulterCertificatComponent implements OnInit {
 		this.initiateur = this.certificatElement["initiator"]
 		this.dataTarget = "#myModal".concat(this.index)
 		this.modalId = "myModal" + this.index
+		this.certificatId = this.certificatElement["cert"]
 
 		console.log(this.index);
 	}

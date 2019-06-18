@@ -8,7 +8,7 @@ import { DocumentComponent } from './document/document.component';
 
 const routes: Routes = [
 	{ path: 'nouveau-client', component: AjouterClientComponent },
-	{ path: 'dossier-client', component: DossierClientComponent },
+	{ path: 'dossier-client/:idclient/:entite', component: DossierClientComponent },
 	{ path: '', component: RechercherClientComponent },
 	{ path: 'document', component: DocumentComponent }
 

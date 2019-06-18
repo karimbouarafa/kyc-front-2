@@ -16,7 +16,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr *ngFor="let d of documentEntite">
+					<tr *ngFor="let d of documentEntite, index as i">
 
 						<td>
 							{{d["nomDoc"]}}
@@ -31,7 +31,7 @@
 							{{d["dateE"]}}
 						</td>
 						<td>
-							<app-modify-document></app-modify-document>
+							<app-modify-document [index]="i" [documentElement]="d"  ></app-modify-document>
 						</td>
 						<td align="center">
 							<a href=""><img

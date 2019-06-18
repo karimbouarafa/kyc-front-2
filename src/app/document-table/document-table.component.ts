@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DocumentListEntiteService } from '../services/document-list-entite.service';
 @Component({
 	selector: 'app-document-table',
@@ -7,17 +7,15 @@ import { DocumentListEntiteService } from '../services/document-list-entite.serv
 })
 export class DocumentTableComponent implements OnInit {
 
-
+	@Input() entiteUtilisateur: string;
+	@Input() idClient: string;
 	documentEntite: string[];
 	columnsDocumentEntite: string[];
 	constructor(private atService: DocumentListEntiteService) { }
 
 	ngOnInit() {
 		this.columnsDocumentEntite = this.atService.getDocumentEntiteColumns();
-		this.documentEntite = this.atService.getDocumentEntiteList();
-		console.log("nomdocument:")
-		console.log(this.documentEntite);
-
+		this.documentEntite = this.atService.getDocumentEntiteList()
 	}
 
 }

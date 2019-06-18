@@ -6,7 +6,8 @@
 
 </div>
 
-<div class="modal fade" [attr.id]="modalId" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
+<div class="modal fade" [attr.id]="modalId" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel"
+	aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -20,6 +21,10 @@
 			<div class="modal-body">
 				<div class="card" style="">
 					<div class="card-body">
+						<div class="row  p-2">
+							<div class="col-sm-5  font-weight-bold">Identifiant du certificat</div>
+							<div class="col ">{{certificatId}}</div>
+						</div>
 						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Statut</div>
 							<div class="col ">{{statutCertificat}}</div>
@@ -47,7 +52,8 @@
 						<div class="row  p-2">
 							<div class="col-sm-5  font-weight-bold">Documents</div>
 							<ul>
-								<li *ngFor ="let d of documentsCertificat" style="color:#2988f5; text-decoration: underline;">{{d}}</li>
+								<li *ngFor="let d of documentsCertificat"
+									style="color:#2988f5; text-decoration: underline;">{{d}}</li>
 							</ul>
 						</div>
 						<div class="row  p-2">
@@ -59,7 +65,13 @@
 							<div class="col ">{{initiateur}}</div>
 						</div>
 					</div> <!-- card.// -->
+					<div class="card-footer">
+						<div class="col text-right">
+							<button type="" class="btn btn-primary">S'abonner</button>
+						</div>
+					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>

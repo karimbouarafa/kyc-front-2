@@ -1,12 +1,12 @@
 <div class="text-center">
-	<button type="button" class="btn" data-toggle="modal" data-target="#myModal3">
+	<button type="button" class="btn" data-toggle="modal" [attr.data-target]="dataTargetDocument">
 		<img src=" data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfjBgUTCw1nv35BAAABCElEQVQoz3XRvyvEcRzH8cedTxLKr+TXRSx+ZLCzGq6uSDfYpKz+FhZGmQwyEEkRG5NVnK86kYT8yEDCGcg3nNf4er56vd71prhqjdmzqiOoMKROEkf2XYMGo4aNqzaTNK3SqUjkwhNoktFl2aQr9QmbJtyBFy/etUhrtOhZRtZaUOLW4/d2SlqNJSeatdu1EH6clpJWYV0kZcS5FZfhFy6z7VCrtDfr8iS/cbmsZrsOdBjEhgjihnbdngSd+gWbcp92HOhzrE3Wgztbcgjq3ccTPUrlVSnYcgTKDGiKG26kROYcuv9ySvU6iwNTxZ+SlPC/gregoBqFPzChSqPrYNa8QtHAqx35D6omR+IpWKd7AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE5LTA2LTA1VDE3OjExOjEzKzAyOjAwquxKUgAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxOS0wNi0wNVQxNzoxMToxMyswMjowMNux8u4AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAAElFTkSuQmCC"
 			alt="">
 	</button>
 
 </div>
 
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
+<div class="modal fade" [attr.id]="modalIdDocument" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
