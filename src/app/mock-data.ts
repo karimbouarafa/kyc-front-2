@@ -12,7 +12,7 @@ export const DOCUMENTLIST: any[] = [
 
 		"participants": ["O=BPCE Assurance, L=Paris, C=FR", "O=Caisse Epargne, L=Paris, C=FR", "O=Natixis Assurance, L=Paris, C=FR"],
 
-		"initiator": "O=BPCE Assurance, L=Paris, C=FR",
+		"initiator": "Natixis",
 
 		"dateA": "12-06-2019 11:42:15",
 
@@ -37,7 +37,7 @@ export const DOCUMENTLIST: any[] = [
 
 		"participants": ["O=BPCE Assurance, L=Paris, C=FR", "O=Caisse Epargne, L=Paris, C=FR", "O=Natixis Assurance, L=Paris, C=FR"],
 
-		"initiator": "O=BPCE Assurance, L=Paris, C=FR",
+		"initiator": "BPCEA",
 
 		"dateA": "12-06-2019 11:42:15",
 
@@ -62,7 +62,7 @@ export const DOCUMENTLIST: any[] = [
 
 		"participants": ["O=BPCE Assurance, L=Paris, C=FR", "O=Caisse Epargne, L=Paris, C=FR", "O=Natixis Assurance, L=Paris, C=FR"],
 
-		"initiator": "O=BPCE Assurance, L=Paris, C=FR",
+		"initiator": "Natixis",
 
 		"dateA": "12-06-2019 11:42:15",
 

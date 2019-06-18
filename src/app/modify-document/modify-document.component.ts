@@ -9,10 +9,13 @@ import { StringifyOptions } from 'querystring';
 export class ModifyDocumentComponent implements OnInit {
 	@Input() index: string;
 	@Input() documentElement: string;
+	@Input() entiteUtilisateur: string;
 	dataTargetDocument: string;
 	modalIdDocument: string;
 	statutDocument: string;
 	idDocument: string;
+	initiateurDocument: string;
+	
 
 
 
@@ -25,7 +28,18 @@ export class ModifyDocumentComponent implements OnInit {
 		this.dataTargetDocument = "#myModalDocument".concat(this.index)
 		this.statutDocument= this.documentElement["status"]
 		this.idDocument = this.documentElement["document"]
+		this.initiateurDocument =this.documentElement["initiator"]
 
 	}
+	isEntiteSameAsUser() {
+		console.log("initiateurDoc: ".concat(this.initiateurDocument))
+		console.log("entiteUser: ".concat(this.entiteUtilisateur))
+		if (this.entiteUtilisateur == this.initiateurDocument) {
+			console.log("meme entite")
+			return true
+		} else {
+			console.log("pas la meme entite")
+			return false
+		}
 
-}
+}}

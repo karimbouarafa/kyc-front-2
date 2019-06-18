@@ -11,6 +11,7 @@
 						<th scope="col">Date de création</th>
 						<th scope="col">Statut</th>
 						<th scope="col">Date d'expiration</th>
+						<th scope="col">Initiateur document</th>
 						<th class="text-center"></th>
 						<th class="text-center"></th>
 					</tr>
@@ -31,7 +32,11 @@
 							{{d["dateE"]}}
 						</td>
 						<td>
-							<app-modify-document [index]="i" [documentElement]="d"  ></app-modify-document>
+							{{d["initiator"]}}
+						</td>
+						<td>
+							<app-modify-document [entiteUtilisateur]="entiteUtilisateur" [index]="i"
+								[documentElement]="d"></app-modify-document>
 						</td>
 						<td align="center">
 							<a href=""><img

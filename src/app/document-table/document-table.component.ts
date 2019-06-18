@@ -18,4 +18,6 @@ export class DocumentTableComponent implements OnInit {
 		this.documentEntite = this.atService.getDocumentEntiteList()
 	}
 
-}
+
+	}
+
