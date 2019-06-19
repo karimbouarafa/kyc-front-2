@@ -14,7 +14,7 @@ import { ClientexistService } from '../services/clientexist.service';
 export class RechercherClientComponent implements OnInit {
 	b: Boolean = false;
 	constructor(private clientService: ClientService, private router: Router, private clientexistService: ClientexistService) { }
-	entiteUtilisateur = "O=Natixis Assurance, L=Paris, C=FR";
+	entiteUtilisateur = "Natixis";
 	ngOnInit() {
 	}
 
