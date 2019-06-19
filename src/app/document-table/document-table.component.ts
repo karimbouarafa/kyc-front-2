@@ -9,15 +9,24 @@ export class DocumentTableComponent implements OnInit {
 
 	@Input() entiteUtilisateur: string;
 	@Input() idClient: string;
-	documentEntite: string[];
-	columnsDocumentEntite: string[];
+	documents: string[];
+	documentsEntite: string[];
+	documentsAutreEntite: string[];
 	constructor(private atService: DocumentListEntiteService) { }
 
 	ngOnInit() {
-		this.columnsDocumentEntite = this.atService.getDocumentEntiteColumns();
-		this.documentEntite = this.atService.getDocumentEntiteList()
+		this.documents = this.atService.getDocumentEntiteList()
+		this.documentsEntite = this.documents.filter(this.isEntiteSameAsUser)
+		this.documentsAutreEntite = this.documents.filter(this.isEntiteNotSameAsUser)
+		console.log(this.documentsAutreEntite)
 	}
 
-
+	isEntiteSameAsUser(d) {
+		return d["initiator"]==this.entiteUtilisateur
 	}
+	isEntiteNotSameAsUser(d) {
+		return d["initiator"] != this.entiteUtilisateur
+	}
+}
+
 
