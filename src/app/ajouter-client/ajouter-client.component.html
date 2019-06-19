@@ -4,35 +4,55 @@
 			<div class="row p-2">
 				<h5 class="card-title font-weight-bold">Ajouter un client</h5>
 				<div class="col-sm-12 col-sm-offset-2">
-					<form>
+					<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+						
+
+
+
+
 						<div class="form-group">
-							<label for="exampleFormControlSelect1">Civilité</label>
-							<select class="form-control" id="exampleFormControlSelect1">
-								<option>Monsieur</option>
-								<option>Madame</option>
-							</select>
+							<label for="civilité">Civilité</label>
+							<select id="civilité" class="form-control" name="civilité" ngModel >
+								<option value="Monsieur">Monsieur</option>
+								<option value="Madame">Madame</option>
+								</select>
+							
 						</div>
 						<div class="form-group">
-							<label for="name">
+							<label for="nom">
 								Nom
 							</label>
-							<input type="text" id="name" class="form-control">
+							<input type="text" id="nom" class="form-control" name="nom" ngModel required>
 						</div>
 						<div class="form-group">
-							<label for="name">
+							<label for="prénom">
 								Prénom
 							</label>
-							<input type="text" id="name" class="form-control">
+							<input type="text" id="prénom" class="form-control" name="prénom" ngModel required>
 						</div>
 						<div class="form-group">
-							<label for="name">
+							<label for="datedenaissance">
 								Date de naissance
 							</label>
-							<input type="date" id="name" class="form-control">
+							<input type="date" id="datedenaissance" class="form-control" name="datedenaissance" ngModel required>
+						</div>
+						
+						<div class="form-group">
+							<label for="lieudenaissance">
+								Lieu de naissance
+							</label>
+							<input type="text" id="lieudenaissance" class="form-control" name="lieudenaissance" ngModel required>
+						</div>
+						<div class="form-group"> 	
+							<label for="adressepostale">
+								Adresse postale
+							</label>
+							<input type="text" id="adressepostale" class="form-control" name="adressepostale" ngModel required>
 						</div>
 						<div class="form-group row">
 							<div class="col text-right">
-								<button type="submit" class="btn btn-primary">Ajouter une personne</button>
+								<button type="submit" [disabled]="f.invalid" class="btn btn-primary">Ajouter une personne</button>
 							</div>
 						</div>
 					</form>

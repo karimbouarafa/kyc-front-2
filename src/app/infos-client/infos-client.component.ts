@@ -15,7 +15,9 @@ export class InfosClientComponent implements OnInit {
 	ngOnInit() {
 
 	}
-
+	civil() {
+		return this.clientService.civilité;
+	}
 	nom() {
 		return this.clientService.nom;
 	}
@@ -25,5 +27,13 @@ export class InfosClientComponent implements OnInit {
 	datedenaissance() {
 		return this.clientService.datedenaissance;
 	}
+	
+	lieudenaissance() {
+		return this.clientService.lieudenaissance;
+	}
+	adressepostale() {
+		return this.clientService.adressepostale;
+	}
+	
 
 }
