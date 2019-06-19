@@ -22,7 +22,7 @@
 							<label for="datedenaissance">
 								<h5> <br />Date de naissance : </h5>
 							</label>
-							<input type="text" id="datedenaissance" class="form-control" name="datedenaissance" ngModel
+							<input type="date" id="datedenaissance" class="form-control" name="datedenaissance" ngModel
 								required>
 						</div>
 						<div class="form-group row">
@@ -37,7 +37,7 @@
 			</div> <!-- card.// -->
 		</div>
 	</div>
-	<div *ngIf="!isClientFound()" class="p-3">
+	<div *ngIf="!isClientFound() && b" class="p-3">
 		<div class="alert alert-warning" role="alert">
 			<h4 class="alert-heading">Client non trouvé</h4>
 			<p>Vérifiez votre entrée dans les champs de recherche</p>

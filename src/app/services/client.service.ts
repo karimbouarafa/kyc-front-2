@@ -7,20 +7,28 @@ import { Data } from '../../../node_modules/@angular/router';
 	providedIn: 'root'
 })
 export class ClientService {
+	civilité: string;
 	nom: string;
 	prénom: string;
 	datedenaissance: string;
+	lieudenaissance: string;
+	adressepostale: string;
+	idClient: String;
 	constructor(private httpClient: HttpClient) {
 	}
 
 
 
 	idclient() {
+		//	var str: String(this.nom+this.prénom+this.datedenaissance);
+		console.log("string:"+this.nom+this.prénom+this.datedenaissance);
+		return this.nom+this.prénom+this.datedenaissance;
 
-		var str = new String(this.nom.concat(this.prénom).concat(this.datedenaissance));
+		//return str.toString();
+	}   
 
-		return str.toString();
-	}
+
+	/*
 	isClientInDatabase() {
 		if (this.idclient() == "clientexistant1406") {
 			console.log("client trouvé")
@@ -30,7 +38,7 @@ export class ClientService {
 			console.log("client inexistant")
 			return false
 		}
-	}
+	}  */
 
 
 

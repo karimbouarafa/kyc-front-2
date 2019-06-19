@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,12 +19,17 @@ import { RechercherClientComponent } from './rechercher-client/rechercher-client
 import { AccesPageComponent } from './acces-page/acces-page.component';
 import { ConsulterCertificatComponent } from './consulter-certificat/consulter-certificat.component';
 import { DocumentComponent } from './document/document.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OtherdocumentComponent } from './otherdocument/otherdocument.component';
 import { DocumentTableComponent } from './document-table/document-table.component';
 import { CertificateRowComponent } from './certificate-row/certificate-row.component';
 
-
+const appRoutes: Routes = [
+  { path: 'dossier-client', component: DossierClientComponent },
+  { path: 'rechercher-client', component: RechercherClientComponent }
+  
+  
+  ];
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,8 +55,10 @@ import { CertificateRowComponent } from './certificate-row/certificate-row.compo
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
