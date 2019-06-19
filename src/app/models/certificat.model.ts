@@ -1,9 +1,9 @@
 export class Certificat {
 
-    constructor(public Cert: string, public client: string, public statut: number, 
+    constructor(public cert: string, public client: string, public status: number, 
         public maintien: number, public initiator: string, public profil: string,
         public documents : string[], public description: string,
-         public dateCréation: string, public dateProchaineCertification: string,
-           public party1: string, public party2: string,) {
+         public dateCreation: string, public dateProchaineCert: string,
+           public other1: string, public other2: string, public docKYC: string) {
     }
   }
