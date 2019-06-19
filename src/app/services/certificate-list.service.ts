@@ -15,5 +15,7 @@ export class CertificateListService {
 	}
 	getCertificateList(): string[] {
 		return CERTIFICATELIST;
+
+		//@karim -> tu as juste à mettre ton get ici et t'assurer que ce qui est retourné est la partie 'data' de la réponse
 	}
 }

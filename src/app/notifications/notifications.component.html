@@ -7,13 +7,27 @@
 			<table class="table table-hover table-striped table-sm">
 				<thead>
 					<tr>
-						<th scope="col">Type de notification</th>
+						<th scope="col">Date</th>
+						<th scope="col">Identifiant du certificat concerné</th>
+						<th scope="col">Libellé</th>
+						<th class="text-center" scope="col">Sévérité</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
+					<tr *ngFor="let n of notifications">
 						<td>
-							exemple de type
+							{{n[0]}}
+						</td>
+						<td>
+							{{n[1]}}
+						</td>
+						<td>
+							{{n[2]}}
+						</td>
+						<td class="text-center">
+							<span *ngIf="isDanger(n)" class="badge badge-pill badge-danger"> Haute </span>
+							<span *ngIf="isWarning(n)" class="badge badge-pill badge-warning">Moyenne</span>
+							<span *ngIf="isSuccess(n)" class="badge badge-pill badge-success"> Basse </span>
 						</td>
 					</tr>
 				</tbody>
