@@ -24,7 +24,7 @@ export class DocumentListEntiteService {
 			.get<any[]>('http://localhost:10010/api/template/dossier?client=karimkarim2019-06-19')
 			.subscribe(
 				(response) => {
-					documents = DOCUMENTLIST.map(doc => doc["state"]["data"])
+					documents = response.map(doc => doc["state"]["data"])
 				},
 				(error) => {
 					console.log('Erreur ! : ' + error);
