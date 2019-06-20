@@ -1,3 +1,4 @@
+import { UserCredentialsService } from './../services/user-credentials.service';
 import { Component, OnInit, Input } from '@angular/core';
 import { NgForm } from '../../../node_modules/@angular/forms';
 import { ClientService } from '../services/client.service';
@@ -13,9 +14,11 @@ import { ClientexistService } from '../services/clientexist.service';
 })
 export class RechercherClientComponent implements OnInit {
 	b: Boolean = false;
-	constructor(private clientService: ClientService, private router: Router, private clientexistService: ClientexistService) { }
-	entiteUtilisateur = "Natixis";
+	constructor(private clientService: ClientService, private router: Router, private clientexistService: ClientexistService, private userCredentialService: UserCredentialsService) { }
+	entiteUtilisateur: string;
+	entiteUtilisateurRouting = "Natixis";
 	ngOnInit() {
+		this.entiteUtilisateur=this.userCredentialService.getEntiteUser()
 	}
 
 	onSubmit(form: NgForm) {
@@ -30,7 +33,7 @@ export class RechercherClientComponent implements OnInit {
 			this.clientService.civilité = this.clientexistService.getClient(form.value['nom'], form.value['prénom'], form.value['datedenaissance'])['civilité'];
 			this.clientService.lieudenaissance = this.clientexistService.getClient(form.value['nom'], form.value['prénom'], form.value['datedenaissance'])['lieudenaissance'];
 			this.clientService.adressepostale = this.clientexistService.getClient(form.value['nom'], form.value['prénom'], form.value['datedenaissance'])['adressepostale'];
-			this.router.navigate(['/dossier-client', this.clientService.idclient(), this.entiteUtilisateur]);
+			this.router.navigate(['/dossier-client', this.clientService.idclient(), this.entiteUtilisateurRouting]);
 		}
 	}
 
