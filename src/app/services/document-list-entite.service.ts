@@ -10,7 +10,7 @@ import { Docu } from '../models/document.model';
 })
 
 export class DocumentListEntiteService {
-
+	
 	constructor(private httpClient: HttpClient, private clientService: ClientService) { }
 
 	getDocumentEntiteColumns(): string[] {
@@ -31,13 +31,15 @@ export class DocumentListEntiteService {
 						documents.push(res[_i]['state']['data']);
 						
 											}
-					
+				
+	
+				console.log("testttxx:"+documents);
 				},
 				(error) => {
 					console.log('Erreur ! : ' + error);
 				}
 			);
-			
+			console.log("testtt:"+documents);
 			return documents; 
 	}
 
