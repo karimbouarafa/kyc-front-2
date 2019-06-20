@@ -65,19 +65,33 @@
 							<div class="col ">{{initiateur}}</div>
 						</div>
 					</div> <!-- card.// -->
-					
+
 
 
 					<div class="card-footer">
-						<div *ngIf="isEntiteSameAsUser()" class="col text-right">
-							<button type="" class="btn btn-primary" (click)="revoquer()">Révoquer</button>
+						<div *ngIf="isEntiteSameAsUser()" class="container-fluid">
+							<section class="row">
+								<div class="col-md">
+								</div>
+								<div class="col-md">
+									<div class="btn-group float-right mt-2">
+										<div class="pt-1">
+											<button class="btn btn-primary" (click)="revoquer()">Révoquer</button>
+										</div>
+										<div class="p-1">
+											<button class="btn btn-primary" (click)="finmaintien()">Fin de
+												Maintenance</button>
+										</div>
+									</div>
+								</div>
+							</section>
 						</div>
-						<div *ngIf="isEntiteSameAsUser()" class="col text-right">
-							<button type="" class="btn btn-primary" (click)="finmaintien()">Fin de maintenance</button>
+						<div *ngIf="!isEntiteSameAsUser()" class="container text-right">
+							<div class="col">
+								<button type="" class="btn btn-primary">S'abonner</button>
+							</div>
 						</div>
-						<div *ngIf="!isEntiteSameAsUser()" class="col text-right">
-							<button type="" class="btn btn-primary">S'abonner</button>
-						</div>
+
 					</div>
 				</div>
 
