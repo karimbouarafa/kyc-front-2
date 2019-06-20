@@ -33,7 +33,7 @@ export class CertificateListService {
 					console.log('Erreur ! : ' + error);
 				}
 			);
-					return certificats;
+			return certificats;
 		//@karim -> tu as juste à mettre ton get ici et t'assurer que ce qui est retourné est la partie 'data' de la réponse
 	}
 }
