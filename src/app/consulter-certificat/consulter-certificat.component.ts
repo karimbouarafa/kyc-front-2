@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { ClientService } from '../services/client.service';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -27,7 +28,7 @@ export class ConsulterCertificatComponent implements OnInit {
 	certificatId: string;
 
 
-	constructor(private clientService: ClientService) {
+	constructor(private clientService: ClientService, private httpClient: HttpClient) {
 	}
 
 	ngOnInit() {
@@ -55,6 +56,38 @@ export class ConsulterCertificatComponent implements OnInit {
 		}
 	}
 
+	
+
+	revoquer(){
+		this.httpClient
+		.put("http://localhost:10010/api/template/updateCertificate?cert="+this.certificatId+"&status=3",{
+		  "certificatId": "22",
+		  "status": "33",
+			  })
+		.subscribe(
+		  () => {
+			console.log('révoquation done');
+					},
+		  (error) => {
+			console.log('Erreurrrr ! : ' + error);
+		  }
+		);
+	}
+	finmaintien(){
+		this.httpClient
+		.put("http://localhost:10010/api/template/updateCertificate?cert="+this.certificatId+"&main=2",{
+		  "certificatId": "22",
+		  "status": "33",
+			  })
+		.subscribe(
+		  () => {
+			console.log('fin maintenance done');
+					},
+		  (error) => {
+			console.log('Erreurrrr ! : ' + error);
+		  }
+		);
+	}
 	nom() {
 		return this.clientService.nom;
 	}
