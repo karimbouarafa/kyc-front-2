@@ -32,13 +32,13 @@ export class ModifyDocumentComponent implements OnInit {
 
 	}
 	isEntiteSameAsUser() {
-		console.log("initiateurDoc: ".concat(this.initiateurDocument))
-		console.log("entiteUser: ".concat(this.entiteUtilisateur))
+		// console.log("initiateurDoc: ".concat(this.initiateurDocument))
+		// console.log("entiteUser: ".concat(this.entiteUtilisateur))
 		if (this.entiteUtilisateur == this.initiateurDocument) {
-			console.log("meme entite")
+			// console.log("meme entite")
 			return true
 		} else {
-			console.log("pas la meme entite")
+			// console.log("pas la meme entite")
 			return false
 		}
 

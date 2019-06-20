@@ -12,7 +12,7 @@ export const DOCUMENTLIST: any[] = [
 
 		"participants": ["O=BPCE Assurance, L=Paris, C=FR", "O=Caisse Epargne, L=Paris, C=FR", "O=Natixis Assurance, L=Paris, C=FR"],
 
-		"initiator": "Natixis",
+		"initiator": "O=Natixis Assurance, L=Paris, C=FR",
 
 		"dateA": "12-06-2019 11:42:15",
 
@@ -62,7 +62,7 @@ export const DOCUMENTLIST: any[] = [
 
 		"participants": ["O=BPCE Assurance, L=Paris, C=FR", "O=Caisse Epargne, L=Paris, C=FR", "O=Natixis Assurance, L=Paris, C=FR"],
 
-		"initiator": "Natixis",
+		"initiator": "O=Natixis Assurance, L=Paris, C=FR",
 
 		"dateA": "12-06-2019 11:42:15",
 
@@ -86,7 +86,7 @@ export const CERTIFICATELIST: any[] = [
 		"other2": "O=BPCE Assurance, L=Paris, C=FR",
 		"client": "karim",
 		"docKYC": "2FF5609BC102A093536C022D8CB5547DFE0447657D0E7F19F77C0F44B6EACA52",
-		"initiator": "Natixis",
+		"initiator": "O=Natixis Assurance, L=Paris, C=FR",
 		"maintien": 1,
 		"documents": ["1"],
 		"profil": "low",
@@ -118,7 +118,7 @@ export const CERTIFICATELIST: any[] = [
 		"other2": "O=BPCE Assurance, L=Paris, C=FR",
 		"client": "karim",
 		"docKYC": "2FF5609BC102A093536C022D8CB5547DFE0447657D0E7F19F77C0F44B6EACA52",
-		"initiator": "Natixis",
+		"initiator": "O=Natixis Assurance, L=Paris, C=FR",
 		"maintien": 1,
 		"documents": ["1", "2", "8"],
 		"profil": "low",
@@ -152,3 +152,5 @@ export const NOTIFICATIONLIST: any[] = [
 		["19-06-2019 11:24:34", "natixisANA19212019112147", "Changement de profil", "2"]]
 
 ]
+
+export const ENTITEUTILISATEUR: string = "O=Natixis Assurance, L=Paris, C=FR" 

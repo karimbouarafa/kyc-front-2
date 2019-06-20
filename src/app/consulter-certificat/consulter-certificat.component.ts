@@ -45,13 +45,13 @@ export class ConsulterCertificatComponent implements OnInit {
 	}
 
 	isEntiteSameAsUser() {
-		console.log("initiateurDoc: ".concat(this.initiateur))
-		console.log("entiteUser: ".concat(this.entiteUtilisateur))
+		// console.log("initiateurDoc: ".concat(this.initiateur))
+		// console.log("entiteUser: ".concat(this.entiteUtilisateur))
 		if (this.entiteUtilisateur == this.initiateur) {
-			console.log("meme entite")
+			// console.log("meme entite")
 			return true
 		} else {
-			console.log("pas la meme entite")
+			// console.log("pas la meme entite")
 			return false
 		}
 	}
