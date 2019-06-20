@@ -17,33 +17,25 @@ export class DocumentListEntiteService {
 		return ["nomDoc", "dateA", "status", "dateE"];
 	}
 
-	getDocumentEntiteList():  Docu[] {
-		
-	//	return DOCUMENTLIST;
-	var documents: Docu[] = [];
+	getDocumentEntiteList(): Docu[] {
+
+		var documents: Docu[];
 		this.httpClient
-		.get<any[]>('http://localhost:10010/api/template/dossier?client=karimkarim2019-06-19')
+			.get<any[]>('http://localhost:10010/api/template/dossier?client=karimkarim2019-06-19')
 			.subscribe(
 				(response) => {
-					let res = response;
-					
-					for (var _i = 0; _i < res.length; _i++) {
-						documents.push(res[_i]['state']['data']);
-						
-											}
-					
+					documents = DOCUMENTLIST.map(doc => doc["state"]["data"])
 				},
 				(error) => {
 					console.log('Erreur ! : ' + error);
 				}
 			);
-			
-			return documents; 
+		return documents;
 	}
 
 
 
-	
+
 
 
 
