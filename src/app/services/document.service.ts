@@ -57,9 +57,9 @@ export class DocumentsService {
 
 
 
-	CreateDoc(nomdoc: string, status: string, expire: string, path: string) {
+	CreateDoc(nomdoc: string, status: string, expire: string, filename: string) {
 		this.httpClient
-			.put("http://localhost:10010/api/template/CreateDoc?client=" + this.clientService.idclient() + "&doc=0&status=" + status + "&nomdoc=" + nomdoc + "&expire=" + expire + "&path="+path, {
+			.put("http://localhost:10010/api/template/uploadDoc?client=" + this.clientService.idclient() + "&status=" + status + "&nomdoc=" + nomdoc + "&expire=" + expire + "&path=/Users/mohammedkarim.bouara/doc_kyc/"+filename, {
 				"status": "33",
 				"expire": "44",
 				"nomdoc": "12",

@@ -15,11 +15,18 @@ export class AddDocumentComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  selectedFiles: FileList;
+  fileName: string;
+  
+  detectFiles(event) {
+      this.selectedFiles = event.target.files;
+      this.fileName = this.selectedFiles[0].name;
+      console.log('selectedFiles: ' + this.fileName );
+    }
 
   onSubmit(form: NgForm) {
 console.log('we the best');
-    this.documentService.CreateDoc( form.value['nomdoc'] , form.value['statut'] , form.value['dateE'], form.value['file']);
+    this.documentService.CreateDoc( form.value['nomdoc'] , form.value['statut'] , form.value['dateE'], this.fileName);
     console.log("what"+form.value['file']);
     
     this.documentService.mydocs.push
