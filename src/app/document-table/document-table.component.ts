@@ -16,7 +16,8 @@ export class DocumentTableComponent implements OnInit {
 	constructor(private atService: DocumentListEntiteService) { }
 
 	ngOnInit() {
-		this.documents = this.atService.getDocumentEntiteList();
+	//	this.documents = this.atService.getDocumentEntiteList();
+		this.documents = this.atService.getDocumentEntiteListClient();
 		console.log('doc2:'+this.atService.getDocumentEntiteList());
 		this.documentsEntite = this.documents.filter(d => { return d["initiator"] === this.entiteUtilisateur })
 		this.documentsAutreEntite = this.documents.filter(d => { return d["initiator"] !== this.entiteUtilisateur })

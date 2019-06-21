@@ -13,7 +13,7 @@ export class ClientService {
 	datedenaissance: string;
 	lieudenaissance: string;
 	adressepostale: string;
-	idClient: String;
+	idClient: string;
 	constructor(private httpClient: HttpClient) {
 	}
 

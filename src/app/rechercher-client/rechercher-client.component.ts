@@ -4,6 +4,8 @@ import { NgForm } from '../../../node_modules/@angular/forms';
 import { ClientService } from '../services/client.service';
 import { Router } from '../../../node_modules/@angular/router';
 import { ClientexistService } from '../services/clientexist.service';
+import { DocumentListEntiteService } from '../services/document-list-entite.service';
+import { Docu } from '../models/document.model';
 
 
 
@@ -14,11 +16,15 @@ import { ClientexistService } from '../services/clientexist.service';
 })
 export class RechercherClientComponent implements OnInit {
 	b: Boolean = false;
-	constructor(private clientService: ClientService, private router: Router, private clientexistService: ClientexistService, private userCredentialService: UserCredentialsService) { }
+	constructor(private clientService: ClientService, private router: Router,
+		 private clientexistService: ClientexistService, private userCredentialService: UserCredentialsService,
+		  private atService: DocumentListEntiteService) { }
 	entiteUtilisateur: string;
 	entiteUtilisateurRouting = "Natixis";
+	documents: Docu[];
 	ngOnInit() {
 		this.entiteUtilisateur=this.userCredentialService.getEntiteUser()
+		this.atService.getDocumentEntiteList();
 	}
 
 	onSubmit(form: NgForm) {

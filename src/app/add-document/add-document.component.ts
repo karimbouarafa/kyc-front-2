@@ -19,8 +19,9 @@ export class AddDocumentComponent implements OnInit {
 
   onSubmit(form: NgForm) {
 console.log('we the best');
-    this.documentService.CreateDoc( form.value['nomdoc'] , form.value['statut'] , form.value['dateE']);
-
+    this.documentService.CreateDoc( form.value['nomdoc'] , form.value['statut'] , form.value['dateE'], form.value['file']);
+    console.log("what"+form.value['file']);
+    
     this.documentService.mydocs.push
     
     

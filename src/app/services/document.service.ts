@@ -57,12 +57,13 @@ export class DocumentsService {
 
 
 
-	CreateDoc(nomdoc: string, status: string, expire: string) {
+	CreateDoc(nomdoc: string, status: string, expire: string, path: string) {
 		this.httpClient
-			.put("http://localhost:10010/api/template/CreateDoc?client=" + this.clientService.idclient() + "&doc=0&status=" + status + "&nomdoc=" + nomdoc + "&expire=" + expire, {
+			.put("http://localhost:10010/api/template/CreateDoc?client=" + this.clientService.idclient() + "&doc=0&status=" + status + "&nomdoc=" + nomdoc + "&expire=" + expire + "&path="+path, {
 				"status": "33",
 				"expire": "44",
 				"nomdoc": "12",
+				"path" : "12"
 			})
 			.subscribe(
 				() => {
