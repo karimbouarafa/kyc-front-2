@@ -20,69 +20,48 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-sm-12 col-sm-offset-2">
-								<form>
+								<form (ngSubmit)="onSubmit(f)" #f="ngForm">
 									<div class="form-group">
-										<label for="exampleFormControlSelect1">Profil de risque</label>
-										<select class="form-control" id="exampleFormControlSelect1">
-											<option>Low</option>
-											<option>Medium</option>
-											<option>High</option>
+										<label for="profil">Profil de risque</label>
+										<select class="form-control" id="profil" name="profil" ngModel required>
+											<option value="Low">Low</option>
+											<option value="Medium">Medium</option>
+											<option value="High">High</option>
 										</select>
 									</div>
 									
-									<div class="form-group">
-										<label>Date de certification</label>
-										<div class="col-sm-10">
-											<input type="date" readonly class="form-control" id="staticEmail"
-												value="06/06/2019">
-										</div>
-									</div>
+								
 									<div class="form-group">
 										<label>Date de péremption</label>
 										<div class="col-sm-10">
-											<input type="date" readonly class="form-control" id="staticEmail"
-												value="" placeholder="06/06/2019">
+											<input type="date"  class="form-control" id="dateE"	name="dateE"  ngModel required >
+										
 										</div>
 									</div>
 									<div class="form-group row">
 										<div class="col-sm-2">Documents</div>
 										<div class="col-sm-10">
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" id="gridCheck1">
+												
+											<div *ngFor="let doc of documentsname; let i = index" class="form-check">
+												<input   class="form-check-input"
+												 type="checkbox" id="gridCheck1">
 												<label class="form-check-label" for="gridCheck1">
-													Carte nationale d'identité
+													{{doc}}
 												</label>
 											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" id="gridCheck1">
-												<label class="form-check-label" for="gridCheck1">
-													Justificatif de domicile
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" id="gridCheck1" disabled>
-												<label class="form-check-label" for="gridCheck1">
-													Relevé fiscal
-												</label>
-											</div>
-											<div class="form-check">
-												<input class="form-check-input" type="checkbox" id="gridCheck1">
-												<label class="form-check-label" for="gridCheck1">
-													Passeport
-												</label>
-											</div>
+											
 										</div>
 									</div>
 									
 									<div class="form-group">
-										<label for="name">
+										<label for="com">
 											Commentaire
 										</label>
-										<input type="text" id="name" class="form-control">
+										<input type="text" id="com" name="com" class="form-control"  ngModel required>
 									</div>
 									<div class="form-group row">
 										<div class="col text-right">
-											<button type="submit" class="btn btn-primary">Créer le certificat</button>
+											<button type="submit" [disabled]="f.invalid" class="btn btn-primary">Créer le certificat</button>
 										</div>
 									</div>
 								</form>

@@ -2,21 +2,23 @@ import { Injectable } from '@angular/core';
 import { Subject } from '../../../node_modules/rxjs';
 import { HttpClient } from '../../../node_modules/@angular/common/http';
 import { Certificat } from '../models/certificat.model';
+import { ClientService } from './client.service';
+import { DocumentListEntiteService } from './document-list-entite.service';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class PiecesService {
+export class CertificatService {
 
-	constructor(private httpClient: HttpClient) {
-		this.getCertificatsFromServer();
+	constructor(private httpClient: HttpClient, private clientService: ClientService, private documentListEntiteService: DocumentListEntiteService) {
+	//	this.getCertificatsFromServer();
 	}
 
 	certificats: Certificat[] = [];
 
 	getCertificatsFromServer() {
 		this.httpClient
-			.get<any[]>('http://localhost:10007/api/template/RequestCertificate')
+			.get<any[]>('http://localhost:10010/api/template/RequestCertificate')
 			.subscribe(
 				(response) => {
 					let res = response;
@@ -26,6 +28,24 @@ export class PiecesService {
 				},
 				(error) => {
 					console.log('Erreur ! : ' + error);
+				}
+			);
+	}
+
+
+	CreateCertificate(profil: string, description: string, dateProchaineCertif: string) {
+		this.httpClient
+			.put("http://localhost:10010/api/template/createCertificate?client=" + this.clientService.idclient() + "&profil=" + profil + "&description=" + description + "&dateProchaineCertif=" + dateProchaineCertif +"&"+ this.documentListEntiteService.getdocURL(), {
+				"profil": "33",
+				"description": "44",
+				"dateProchaineCertif": "12"
+			})
+			.subscribe(
+				() => {
+					console.log('document crée réalisé');
+				},
+				(error) => {
+					console.log('Erreurrrr ! : ' + error);
 				}
 			);
 	}

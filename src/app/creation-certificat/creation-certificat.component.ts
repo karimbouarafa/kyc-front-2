@@ -1,4 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ClientService } from '../services/client.service';
+import { DocumentsService } from '../services/document.service';
+import { DocumentListEntiteService } from '../services/document-list-entite.service';
+import { NgForm } from '@angular/forms';
+import { CertificatService } from '../services/certificat.service';
 
 @Component({
 	selector: 'app-creation-certificat',
@@ -8,14 +13,23 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CreationCertificatComponent implements OnInit {
 
 	@Input() idClient;
+	documentsname: String[];
 
-
-	constructor() { }
+	constructor(private documentsListEntiteService: DocumentListEntiteService,
+		 private certificatService: CertificatService) {
+		this.documentsname = this.documentsListEntiteService.documentsName;
+	 }
 
 	ngOnInit() {
 
 
 	}
 
+	onSubmit(form: NgForm) {
 
+this.certificatService.CreateCertificate(form.value['profil'],form.value['dateE'],form.value['com'])
+	
+	}
+
+    
 }

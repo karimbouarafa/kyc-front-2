@@ -75,6 +75,23 @@ export class DocumentsService {
 			);
 	}
 
+	DownloadDoc(hash: string, nomdoc: string) {
+		this.httpClient
+			.put("http://localhost:10010/api/template/downDoc?hash=" + hash + "&nomdoc=" + nomdoc, {
+				"hash": "33",
+				"nomdoc": "44"
+				
+			})
+			.subscribe(
+				() => {
+					console.log('document crée réalisé');
+				},
+				(error) => {
+					console.log('Erreurrrr ! : ' + error);
+				}
+			);
+	}
+
 
 
 	MyDocuments() {

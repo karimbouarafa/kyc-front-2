@@ -11,6 +11,8 @@ import { Docu } from '../models/document.model';
 
 export class DocumentListEntiteService {
 	documents: Docu[] = [];
+	documentsName: String[] = [];
+	
 	constructor(private httpClient: HttpClient, private clientService: ClientService) { 
 		
 	}
@@ -28,10 +30,22 @@ export class DocumentListEntiteService {
 		
 			if(this.documents[_i]['client'] == str){
 					D.push(this.documents[_i]);
+					this.documentsName.push((this.documents[_i]['nomDoc']));
 			}
 	}
+	console.log("docname:"+this.documentsName);
 	return D;
 	}
+
+	getdocURL(){
+		var X: String = "";
+		for (var _i = 0; _i < this.documentsName.length; _i++) {
+			X = X+"documents="+ this.documentsName[_i]+"&";
+	}
+	console.log('url:'+X);
+	return X;
+	}
+
 
 	getDocumentEntiteList() {
 		
@@ -52,7 +66,7 @@ export class DocumentListEntiteService {
 				console.log("testttxx:"+this.documents);
 				},
 				(error) => {
-					console.log('Erreur ! : ' + error);
+					console.log('Erreur ! : le service ne répond pas à temps ' + error);
 				}
 			);
 

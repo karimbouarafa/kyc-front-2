@@ -40,6 +40,8 @@ export class DocumentComponent implements OnInit {
     return this.documentsservice.mydocs[this.index]['dateE'];
   }
 
+ 
+
   
   
 }

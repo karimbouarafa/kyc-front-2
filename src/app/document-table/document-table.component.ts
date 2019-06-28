@@ -24,6 +24,8 @@ export class DocumentTableComponent implements OnInit {
 		console.log("documents autres entités: ")
 		console.log(this.documentsEntite)
 	}
+
+	
 }
 
 
