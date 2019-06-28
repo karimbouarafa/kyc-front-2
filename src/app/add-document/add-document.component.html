@@ -4,7 +4,8 @@
 
 </div>
 
-<div class="modal fade" id="modalDocument" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel" aria-hidden="true">
+<div class="modal fade" id="modalDocument" tabindex="-1" role="dialog" aria-labelledby="purchaseLabel"
+	aria-hidden="true">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -33,8 +34,16 @@
 										<label for="prénom">
 											<h5> <br />Statut du document : </h5>
 										</label>
-										<input type="text" id="statut" class="form-control" name="statut" ngModel
+										<input type="text" id="statut1" class="form-control" name="statut1" ngModel
 											required>
+									</div>
+									<div class="form-group">
+										<label for="exampleFormControlSelect1">Statut du document</label>
+										<select id="statut" class="form-control" name="statut" ngModel required>
+											<option value="1">Conforme</option>
+											<option value="2">Non Conforme</option>
+											<option value="3">A vérifier</option>
+										</select>
 									</div>
 
 									<div class="form-group ">
@@ -48,11 +57,13 @@
 										<label for="file">
 											Fichier
 										</label>
-										<input type="file" id="file" class="form-control-file" (change)="detectFiles($event)">
+										<input type="file" id="file" class="form-control-file"
+											(change)="detectFiles($event)">
 									</div>
 									<div class="form-group row">
 										<div class="col text-right">
-											<button class="btn btn-primary" type="submit" [disabled]="f.invalid" aria-label="Close">Ajouter
+											<button class="btn btn-primary" type="submit" [disabled]="f.invalid"
+												aria-label="Close">Ajouter
 												le document</button>
 
 										</div>
