@@ -1,5 +1,5 @@
 <div class="text-right">
-	<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modalDocument">Ajouter un
+	<button (click)="onOpening()" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modalDocument">Ajouter un
 		document</button>
 
 </div>
@@ -29,7 +29,6 @@
 										<input type="text" id="nomdoc" class="form-control" name="nomdoc" ngModel
 											required>
 									</div>
-
 									<div class="form-group ">
 										<label for="prénom">
 											<h5> <br />Statut du document : </h5>
@@ -45,7 +44,6 @@
 											<option value="3">A vérifier</option>
 										</select>
 									</div>
-
 									<div class="form-group ">
 										<label for="dateE">
 											<h5> <br />Date d'expiration : </h5>
@@ -61,11 +59,13 @@
 											(change)="detectFiles($event)">
 									</div>
 									<div class="form-group row">
-										<div class="col text-right">
+										<div *ngIf="!hasSubmittedForm" class="col text-right">
 											<button class="btn btn-primary" type="submit" [disabled]="f.invalid"
 												aria-label="Close">Ajouter
 												le document</button>
-
+										</div>
+										<div *ngIf="hasSubmittedForm" class="col text-center">
+											<button class="btn btn-primary" data-dismiss="modal" aria-label="Close">Fermer</button>
 										</div>
 									</div>
 								</form>

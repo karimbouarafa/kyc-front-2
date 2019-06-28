@@ -1,5 +1,5 @@
 <div class="text-right">
-	<button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal">Créer un nouveau
+	<button (click)="onOpening()" type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal">Créer un nouveau
 		certificat</button>
 
 </div>
@@ -29,39 +29,42 @@
 											<option value="High">High</option>
 										</select>
 									</div>
-									
-								
 									<div class="form-group">
 										<label>Date de péremption</label>
 										<div class="col-sm-10">
-											<input type="date"  class="form-control" id="dateE"	name="dateE"  ngModel required >
-										
+											<input type="date" class="form-control" id="dateE" name="dateE" ngModel
+												required>
+
 										</div>
 									</div>
 									<div class="form-group row">
 										<div class="col-sm-2">Documents</div>
 										<div class="col-sm-10">
-												
+
 											<div *ngFor="let doc of documentsname; let i = index" class="form-check">
-												<input   class="form-check-input"
-												 type="checkbox" id="gridCheck1">
+												<input class="form-check-input" type="checkbox" id="gridCheck1">
 												<label class="form-check-label" for="gridCheck1">
 													{{doc}}
 												</label>
 											</div>
-											
+
 										</div>
 									</div>
-									
+
 									<div class="form-group">
 										<label for="com">
 											Commentaire
 										</label>
-										<input type="text" id="com" name="com" class="form-control"  ngModel required>
+										<input type="text" id="com" name="com" class="form-control" ngModel required>
 									</div>
 									<div class="form-group row">
-										<div class="col text-right">
-											<button type="submit" [disabled]="f.invalid" class="btn btn-primary">Créer le certificat</button>
+										<div *ngIf="!hasSubmittedForm" class="col text-right">
+											<button type="submit" [disabled]="f.invalid" class="btn btn-primary">Créer
+												le certificat</button>
+										</div>
+										<div *ngIf="hasSubmittedForm" class="col text-center">
+											<button (click)="viderFormulaire()" class="btn btn-primary" data-dismiss="modal"
+												aria-label="Close">Fermer</button>
 										</div>
 									</div>
 								</form>

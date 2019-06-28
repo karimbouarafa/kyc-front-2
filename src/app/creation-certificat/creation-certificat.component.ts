@@ -16,20 +16,29 @@ export class CreationCertificatComponent implements OnInit {
 	documentsname: String[];
 
 	constructor(private documentsListEntiteService: DocumentListEntiteService,
-		 private certificatService: CertificatService) {
+		private certificatService: CertificatService) {
 		this.documentsname = this.documentsListEntiteService.documentsName;
-	 }
+	}
+	hasSubmittedForm: boolean;
 
 	ngOnInit() {
-
-
+		this.hasSubmittedForm = false;
 	}
 
 	onSubmit(form: NgForm) {
 
-this.certificatService.CreateCertificate(form.value['profil'],form.value['dateE'],form.value['com'])
-	
+		this.certificatService.CreateCertificate(form.value['profil'], form.value['dateE'], form.value['com'])
+		this.hasSubmittedForm = true;
+		console.log(form);
+
 	}
 
-    
+	onOpening() {
+		this.hasSubmittedForm = false;
+	}
+	viderFormulaire(form: NgForm) {
+		form.reset()
+		console.log(form)
+	}
+
 }
